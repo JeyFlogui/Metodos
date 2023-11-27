@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header class="header-grid">
+        <div class="titulo">
+            <h1>Formulación de modelos matemáticos.</h1>
+        </div>
+    </header>
+    
+    <div class="container_bar">
+        <nav class="container_nav">
+            <a href="bienvenida.html">Bienvenida</a> 
+            <a href="Main.html">Inicio</a>       
+            <a href="ejemplo.html">Ejemplo</a>
+            <a href="fuentedeconsulta.html">Fuentes de consulta</a>
+            <a href="acercade.html">Acerca de</a>
+        </nav>
+        
+        <div class="contenedorBienvenida">
+            <div class="caja-titulo-Bienvenida">
+                <h2>Inicio</h2>
+            </div>
+            <div class="caja-texto-Bienvenida">
+                <p>
+                    Ingresa tu problema matemático en el siguiente recuadro:
+                </p>
+                <form id="problemaForm">
+                    <input id="problema" class="formato" placeholder="Ingresa tu problema matemático aquí"></input>
+                    <button id="botonResolver" type="submit">Resolver</button>
+                </form>
+                <div id="resultado"></div> <!-- Aquí se mostrará la respuesta -->
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer">
+            <p>Colocar información de pie de página &copy;</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('problemaForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Evitar el envío del formulario por defecto
+
+            const problema = document.getElementById('problema').value;
+
+            fetch('/solve', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ problema: problema })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('resultado').innerHTML = `
+                    <h3>Función objetivo:</h3>
+                    <p>${data.funcion_objetivo}</p>
+                    <h3>Variables de decisión:</h3>
+                    <p>${data.variables_decision}</p>
+                    <h3>Restricciones:</h3>
+                    <ul>${data.restricciones.map(r => `<li>${r}</li>`).join('')}</ul>
+                `;
+            })
+            .catch(error => {
+                console.error('Error al obtener la respuesta:', error);
+            });
+        });
+    </script>
+</body>
+</html>

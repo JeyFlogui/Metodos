@@ -1,0 +1,136 @@
+body{
+    font-family: sans-serif;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+
+  titulo{
+    text-align: center;
+    }
+
+  .header-grid {
+    background-color: #9bccec;
+    width: auto;
+    height: 100px;
+}
+
+header h1 {
+  margin: 0px;
+  padding: 21px;
+  text-align: center;
+  color:#080808;
+  justify-content: center;
+  align-items: center; 
+}
+
+.container_bar {
+  display: flex;
+  height: 100%;
+}
+
+.container_bar li {
+  display: block; 
+  margin-bottom: 25px; 
+}
+
+.container_bar li a {
+  text-decoration: none;
+  color: #050505; 
+  font-size: 25px; 
+  font-family: Arial, sans-serif; 
+}
+
+.container_nav {
+  display: flex;
+  flex-direction: column;
+  width: auto; 
+  background-color: #bcdffc; 
+  text-align: justify;
+  padding: 10px;
+  align-items: center;
+}
+
+nav a {
+  padding: 15px;
+  text-decoration: none;
+  color: #0c0c0c; 
+}
+
+nav a:hover {
+  background-color: #82bfe6;
+}
+
+  footer {
+    background-color: #99b2cf;
+    padding: 20px;
+    text-align: center;
+  }
+
+  footer p{
+    color: white;
+  }
+
+h2 {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.contenedorBienvenida {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  background-color: lightblue;
+  width: 1300px;
+  height: auto;
+  padding-bottom: 50px; /* Incrementa el padding-bottom para dar espacio al botón */
+}
+
+.caja-texto-Bienvenida {
+  width: 1000px; /* Reduce el ancho para dejar espacio al botón */
+  height: auto; /* Cambia a auto para ajustar la altura según el contenido */
+  position: relative; /* Cambia a posicionamiento relativo */
+}
+
+.formato {
+  width: 100%; /* Cambia el ancho para ocupar el ancho del contenedor */
+  padding: 20px;
+  border: 3px solid #0632f8;
+  margin-top: 20px; /* Ajusta el margen superior */
+}
+
+#botonResolver {
+  position: absolute;
+  bottom: -40px; /* Ajusta la posición vertical al final del contenedor */
+  right: 0; /* Ajusta la posición horizontal al final del contenedor */
+  margin: 10px; /* Añade margen para separarlo del borde */
+}
+
+.caja-titulo-Bienvenida {
+  padding: 10px; 
+  background-color: skyblue;
+  width: auto;
+  height: auto;
+  }
+
+.container_bar {
+  display: flex;
+  height: 100%;
+}
+
+.container_nav {
+  display: flex;
+  flex-direction: column;
+  width: auto; 
+  background-color: #bcdffc; 
+  text-align: justify;
+  padding: 10px;
+  align-items: center;
+}
+
+
+
